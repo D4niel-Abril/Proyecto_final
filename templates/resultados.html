@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindMyPrice Resultados</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Resultados para "{{ consulta }}"</h1>
+    
+    {% if productos %}
+        <ul>
+            {% for producto in productos %}
+                <li>{{ producto.nombre }} - ${{ producto.precio }} en <a href={{producto.url}} target="_blank">{{producto.tienda}}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron productos.</p>
+    {% endif %}
+
+    <a href="/">Volver a buscar</a>
+    <footer>
+        <p1>© 2025 Mi Página Web. Todos los derechos reservados.</p1>
+    </footer>
+</body>
+</html>
